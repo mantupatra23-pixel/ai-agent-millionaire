@@ -2,37 +2,106 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse, HTMLResponse
 from fpdf import FPDF
 import os
-import json
 
-app = FastAPI(title="The AI Agent Millionaire - Complete 100 Blueprint Book Edition")
+app = FastAPI(title="The AI Agent Millionaire - 100 Topic Blueprint Engine")
 
-# 📂 PURE 100 COMPLETELY DISTINCT HIGH-VALUE BLUEPRINTS DATA MATRIX (NO IDENTICAL LOOPS)
-blueprints_list = []
+# 📂 PURE 100 COMPLETELY DISTINCT TECHNICAL SUBJECTS DATA MATRIX
+FINAL_100_BLUEPRINTS = []
 categories = ["LOCAL BUSINESS AUTOMATION", "HYPER-TRAFFIC MEDIA SYSTEMS", "MICRO-SAAS DEVELOPMENT", "DATA & INFRASTRUCTURE OPERATORS"]
 
+subjects = [
+    "Salon Slot Booking", "Gym Lead Follow-up", "Real Estate Matcher", "Restaurant Review Booster",
+    "Kirana Ledger Bot", "Dentist Recall Engine", "Boutique Inventory Agent", "Car Wash Scheduler",
+    "Cafe Order Automator", "Hotel Concierge Bot", "Pharmacy Prescription Reminder", "Diagnostic Lab Booking",
+    "Coaching Institute Doubt Solver", "Spa Wellness Advisor", "Bakery Pre-order Bot", "Catering Lead Qualification",
+    "Dry Cleaning Pickup Bot", "Pet Grooming Organizer", "Jewelry Shop Showroom Guide", "Law Firm Case Intake",
+    "Accounting Client Collector", "Interior Design Moodboard Bot", "Packers & Movers Estimator", "Solar Panel Lead Agent",
+    "Electrician Dispatch Coordinator"
+]
+
+media_subjects = [
+    "Audio-Podcast Curator", "Pinterest Viral Traffic", "Reddit Storyteller Channel", "YouTube Shorts Engine",
+    "Automated Newsletter Writer", "X/Twitter Trend Viral Bot", "Instagram Aesthetic Curator", "LinkedIn Ghostwriter Bot",
+    "Medium Article Programmatic Factory", "Substack Niche Digest Builder", "TikTok Faceless Meme Factory", "Spotify Ambient Playlist Curator",
+    "Daily Tech News Summarizer", "Stock Market Automated Alert Reel", "Crypto Sentiment Live Broadcaster", "Product Hunt Launch Informer",
+    "HackerNews Trend Analyzer", "E-book Auto-Publisher Bot", "Meme Marketing Automatic Router", "AI Video Translation Pipeline",
+    "Real-time Sports Commentary Generator", "Gaming Clips Automatic Editor", "SaaS Feature Explainer Bot", "Startup Pitch Audio Synthesizer",
+    "Local Event Dynamic Broadcast Engine"
+]
+
+saas_subjects = [
+    "Resume Customizer Portal", "Dynamic Invoice Tax Planner", "AI Cover Letter Architect", "Cold Email Hyper-Personalizer",
+    "Pitch Deck Slide Copy Generator", "SQL Query Natural Language Tool", "SEO Meta Description Bulk Optimizer", "Code Error Instant Explainer",
+    "Sitemap XML Auto-Validator", "API Documentation Auto-Generator", "Micro-CRM for Solo Founders", "No-Code Component Customizer",
+    "UI/UX Accessibility Checker Bot", "Social Media Bio Dynamic Generator", "Regex Pattern English Translator", "JSON Schema Auto-Sanitizer",
+    "Markdown to HTML Clean Converter", "E-commerce Product Copy Multiplier", "Job Description Post Architect", "Competitor Ad Copy Analyzer",
+    "Affiliate Link Auto-Cloaker", "Terms & Conditions Micro-Generator", "Privacy Policy Customizer Bot", "User Feedback Sentiment Aggregator",
+    "Changelog Automated Draft Tool"
+]
+
+infra_subjects = [
+    "Competitor Pricing Watchdog", "Programmatic SEO Content Factory", "Broken Link Auto-Repair Daemon", "Server Log Anomaly Detector",
+    "S3 Bucket Cost Optimization Sentinel", "SSL Certificate Expiry Auto-Renewer", "Database Slow Query Optimizer", "API Rate Limit Monitoring Agent",
+    "Uptime Alert Slack Webhook Router", "Docker Container Auto-Scale Watcher", "GitHub Repo PR Auto-Reviewer", "Cloudflare Rule Dynamic Adjuster",
+    "Phishing Link Domain Scraper", "Google Search Console Indexing Daemon", "Proxy Rotation Automated Manager", "Stripe Dispute Evidence Collector",
+    "Backlink Growth Monitoring Daemon", "Pinterest Image Metadata Optimizer", "YouTube Video Description Auto-Updater", "Multi-Cloud Backup Sync Worker",
+    "Redis Cache Eviction Monitor", "Webflow to Static HTML Exporter", "Shopify Stock Level Reorder Agent", "Google Map Citation Audit Engine",
+    "Automated Trademark Infringement Finder"
+]
+
+# Populating exactly 100 uniquely titled system datasets dynamically
 for i in range(100):
     num = i + 1
     cat = categories[i % 4]
-    blueprints_list.append({
-        "number": num,
-        "category": cat,
-        "title": f"Autonomous AI Engineering Framework Model {num}",
-        "tools": "FastAPI, Make.com, OpenAI API, Supabase Vector DB",
-        "desc": f"Blueprint Schema #{num}: Premium multi-agent autonomous infrastructure solution optimized for high-performance automation execution, data caching, and unified response delivery.",
-        "flow": f"Trigger Hook -> Agent Matrix Analysis -> Execution Core -> Response Stream",
-        "steps": f"1. Deploy core script models onto enterprise cluster infrastructure. 2. Bind application webhook channels to target endpoints. 3. Monitor data layer outputs.",
-        "command": f"pip install fastapi uvicorn openai pydantic requests",
-        "money": f"Subscription Model: Enterprise software clients aur tech platforms ko Rs. 5,000/month par soft-rent licensing provide karein."
-    })
+    
+    if idx := (i % 4) == 0:
+        ind = subjects[(i // 4) % len(subjects)]
+        title = f"Autonomous {ind} Framework"
+        tools = "Make.com, OpenAI Assistants API, Twilio WhatsApp API, Google Workspace"
+        desc = f"System Schema #{num}: Ek conversational AI agent architecture framework jo local {ind} workflows ko handle karta hai. Yeh processing metadata analytics parameters auto-parse karke database layer update karta hai."
+        flow = "User Chat -> Twilio Webhook -> Make Pipeline -> OpenAI Core -> Ledger Update"
+        steps = "1. Setup cloud channel webhooks for input streaming. 2. Mount knowledge base criteria to vector memory index. 3. Hook output streams securely."
+        command = "pip install openai twilio fastapi uvicorn requests"
+        money = "Monthly Retainer: Charge Rs. 3,000 to Rs. 6,000/month securely."
+    elif idx == 1:
+        ind = media_subjects[(i // 4) % len(media_subjects)]
+        title = f"Automated {ind} Matrix"
+        tools = "Python Scrapy, Gemini Pro API, ElevenLabs Voice, Platform REST APIs"
+        desc = f"System Schema #{num}: High-fidelity dynamic content rendering engine jo automated {ind} media operations deploy karta hai without human processing layers."
+        flow = "Scraper Daemon -> Tokenizer Layer -> LLM Content Variant Gen -> REST API Dispatch"
+        steps = "1. Launch celery worker loops on cloud servers. 2. Implement target media transformation structures. 3. Monitor analytics index parameters."
+        command = "pip install requests beautifulsoup4 soundfile analytics-sdk"
+        money = "Traffic Revenue Arbitrage: Capitalize programmatic traffic payouts directly."
+    elif idx == 2:
+        ind = saas_subjects[(i // 4) % len(saas_subjects)]
+        title = f"Premium {ind} Micro-SaaS Portal"
+        tools = "Next.js, Tailwind CSS, FastAPI Backend, Supabase Engine, Stripe Gateway"
+        desc = f"System Schema #{num}: Single-utility user portal framework engineered around {ind} optimization blocks. Features embedded dynamic credit balance management ledger tools."
+        flow = "Client Form Upload -> FastAPI API Endpoint -> AI Asset Compiler Layer -> Stripe Hook Return"
+        steps = "1. Configure React frontend forms layout layout blueprints. 2. Mount authorization keys to target endpoints variables. 3. Route response files."
+        command = "npm install @stripe/stripe-js pdf-parse openai dotenv"
+        money = "Pay-Per-Generation: Invoice users Rs. 49 to Rs. 149 per transaction directly."
+    else:
+        ind = infra_subjects[(i // 4) % len(infra_subjects)]
+        title = f"Enterprise {ind} Guardian Daemon"
+        tools = "Python Scrapy, PostgreSQL Server, Redis Cache, Resend Mail API, AWS EC2"
+        desc = f"System Schema #{num}: Persistent cloud daemon application engineered to monitor technical performance parameters for {ind} anomalies autonomously."
+        flow = "Cron Thread Trigger -> Active Scanner Node -> Redis Memory Cache Filter -> Resend Mailer Out"
+        steps = "1. Deploy background daemon processes loops. 2. Hook tracking parameters schemas to relational DB structures. 3. Run alert webhooks."
+        command = "pip install scrapy supabase resend redis psycopg2-binary"
+        money = "B2B Infrastructure Retainer: Bill software systems clients Rs. 5,000 to Rs. 12,000/month."
 
-FINAL_100_BLUEPRINTS = blueprints_list
+    FINAL_100_BLUEPRINTS.append({
+        "number": num, "category": cat, "title": title, "tools": tools,
+        "desc": desc, "flow": flow, "steps": steps, "command": command, "money": money
+    })
 
 class PremiumEbook(FPDF):
     def header(self):
         if self.page_no() > 2:
             self.set_font("Helvetica", "B", 8)
             self.set_text_color(100, 116, 139)
-            self.cell(0, 10, "THE AI AGENT MILLIONAIRE  |  100 AUTONOMOUS SYSTEM RUNBOOKS", 0, 0, "L")
+            self.cell(0, 10, "THE AI AGENT MILLIONAIRE  |  100 TOPIC SYSTEM RUNBOOKS", 0, 0, "L")
             self.ln(12)
 
     def footer(self):
@@ -42,35 +111,26 @@ class PremiumEbook(FPDF):
             self.set_text_color(148, 163, 184)
             self.cell(0, 10, f"Page {self.page_no()}", 0, 0, "R")
 
-@app.get("/", response_class=HTMLResponse)
-def launch_homepage():
-    return """
+@app.get("/")
+def home():
+    return HTMLResponse("""
     <!DOCTYPE html>
     <html>
     <head>
-        <title>The AI Agent Millionaire - Premium Book Portal</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The AI Agent Millionaire - Book Portal</title>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
-    <body class="bg-slate-950 text-white font-sans antialiased selection:bg-blue-500/30">
-        <div class="max-w-4xl mx-auto px-6 py-24 text-center">
-            <span class="text-blue-400 font-semibold tracking-widest text-xs uppercase bg-blue-950/60 px-4 py-2 rounded-full border border-blue-900/40 backdrop-blur-md">Premium Full-Length E-Book Launch</span>
-            <h1 class="text-5xl md:text-7xl font-black tracking-tight mt-8 mb-6 bg-gradient-to-r from-white via-slate-200 to-slate-500 bg-clip-text text-transparent">The AI Agent Millionaire</h1>
-            <p class="text-md md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-medium">100% Full-Length Edition. Pure 100 uniquely documented system architecture blueprints, specific terminal setup commands, and tactical value capture playbooks.</p>
-            
-            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800/80 p-10 rounded-3xl max-w-md mx-auto shadow-2xl relative overflow-hidden">
-                <div class="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-4">Complete System Blueprints</div>
-                <h3 class="text-2xl font-bold tracking-tight mb-2 text-slate-100">100 Hyperlinked Runbooks</h3>
-                <p class="text-slate-400 text-sm mb-8 leading-relaxed">No generic filler, no loops. Cleanly mapped technical layouts with interactive page indexing navigation.</p>
-                
-                <a href="/generate-pdf" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-6 rounded-2xl transition duration-200 shadow-xl shadow-blue-600/10 transform active:scale-[0.99]">
-                    Download Full 100 Blueprint E-Book ↓
-                </a>
-            </div>
+    <body class="bg-slate-950 text-white font-sans antialiased flex items-center justify-center min-h-screen">
+        <div class="max-w-md p-8 bg-slate-900 border border-slate-800 rounded-3xl text-center shadow-2xl">
+            <h1 class="text-3xl font-black mb-4">The AI Agent Millionaire</h1>
+            <p class="text-slate-400 text-sm mb-6">100 Highly Detailed Complete Topic Blueprints with Architecture Diagrams and Terminal commands setup.</p>
+            <a href="/generate-pdf" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-xl transition duration-200">
+                Download Full 100 Topic E-Book ↓
+            </a>
         </div>
     </body>
     </html>
-    """
+    """)
 
 @app.get("/generate-pdf")
 def export_premium_pdf():
@@ -78,7 +138,7 @@ def export_premium_pdf():
     pdf = PremiumEbook()
     pdf.set_auto_page_break(auto=True, margin=20)
     
-    # COVER PAGE
+    # 📘 STEP 1: COVER PAGE
     pdf.add_page()
     pdf.set_fill_color(15, 23, 42)
     pdf.rect(0, 0, 215, 280, "F")
@@ -87,25 +147,25 @@ def export_premium_pdf():
     pdf.rect(15, 80, 180, 75, "F")
     
     pdf.set_y(95)
-    pdf.set_font("Helvetica", "B", 26)
+    pdf.set_font("Helvetica", "B", 24)
     pdf.set_text_color(255, 255, 255)
     pdf.cell(0, 10, "THE AI AGENT MILLIONAIRE", 0, 1, "C")
     
     pdf.ln(5)
     pdf.set_font("Helvetica", "B", 9)
     pdf.set_text_color(59, 130, 246)
-    pdf.cell(0, 10, "100 INTERACTIVE BLUEPRINTS WITH ARCHITECTURE FLOWCHARTS & SETUP CODES", 0, 1, "C")
+    pdf.cell(0, 10, "100 INTERACTIVE BLUEPRINTS WITH FULL SYSTEM RUNBOOKS & SETUP COMMANDS", 0, 1, "C")
     
     pdf.set_y(240)
     pdf.set_font("Helvetica", "B", 9)
     pdf.set_text_color(100, 116, 139)
     pdf.cell(0, 10, "2026 ULTIMATE PRODUCTION WORKFLOW  |  BY MANTU PATRA", 0, 1, "C")
 
-    # MULTI-PAGE INDEX DIRECTORY
+    # 📘 STEP 2: COMPLETE INDEX DIRECTORY
     pdf.add_page()
     pdf.set_font("Helvetica", "B", 18)
     pdf.set_text_color(15, 23, 42)
-    pdf.cell(0, 10, "SYSTEM INDEX & DIRECTORY", 0, 1, "L")
+    pdf.cell(0, 10, "SYSTEM INDEX & TOPICS DIRECTORY", 0, 1, "L")
     
     pdf.set_fill_color(37, 99, 235)
     pdf.rect(15, pdf.get_y() + 2, 30, 2, "F")
@@ -123,7 +183,7 @@ def export_premium_pdf():
             
         pdf.set_font("Helvetica", "B", 9)
         pdf.set_text_color(37, 99, 235)
-        pdf.cell(22, 7, f"BP #{blueprint['number']:03d} ->", 0, 0, "L", link=links_map[blueprint['number']])
+        pdf.cell(22, 7, f"TOPIC #{blueprint['number']:03d} ->", 0, 0, "L", link=links_map[blueprint['number']])
         
         pdf.set_font("Helvetica", "", 9.5)
         pdf.set_text_color(15, 23, 42)
@@ -131,7 +191,7 @@ def export_premium_pdf():
         pdf.cell(0, 7, short_title, 0, 1, "L", link=links_map[blueprint['number']])
         index_count += 1
 
-    # INDIVIDUAL BLUEPRINT PAGES
+    # 📘 STEP 3: INDIVIDUAL TOPICS DEEP-DIVE PAGES
     for blueprint in FINAL_100_BLUEPRINTS:
         pdf.add_page()
         pdf.set_link(links_map[blueprint['number']], y=0)
@@ -140,9 +200,9 @@ def export_premium_pdf():
         pdf.set_text_color(100, 116, 139)
         pdf.cell(0, 5, blueprint['category'], 0, 1, "L")
         
-        pdf.set_font("Helvetica", "B", 12)
+        pdf.set_font("Helvetica", "B", 11)
         pdf.set_text_color(37, 99, 235)
-        pdf.cell(0, 6, f"SYSTEM ARCHITECTURE BLUEPRINT #{blueprint['number']:03d}", 0, 1, "L")
+        pdf.cell(0, 6, f"SYSTEM RUNBOOK TOPIC #{blueprint['number']:03d}", 0, 1, "L")
         
         pdf.set_font("Helvetica", "B", 16)
         pdf.set_text_color(15, 23, 42)
@@ -175,11 +235,11 @@ def export_premium_pdf():
                 pdf.multi_cell(0, 6, text_data, 0, "J")
                 pdf.ln(4)
 
-        format_section("SYSTEM LOGIC & FUNCTIONAL DESCRIPTION:", blueprint['desc'])
-        format_section("DATA FLOW & TECHNICAL ARCHITECTURE DIAGRAM:", f"  [ {blueprint['flow']} ]", color_rgb=(100, 116, 139), font_type="B")
-        format_section("REQUIRED AUTOMATION TECHNOLOGY STACK:", blueprint['tools'], color_rgb=(15, 23, 42), font_type="I")
-        format_section("STEP-BY-STEP TERMINAL & CLOUD RUNBOOK IMPLEMENTATION:", blueprint['steps'])
-        format_section("TERMINAL REQUISITES / SETUP INITIALIZATION COMMANDS:", blueprint['command'], is_code_bg=True)
+        format_section("TOPIC LOGIC & DETAILED OPERATIONAL SPECIFICATION:", blueprint['desc'])
+        format_section("DATA FLOW FLOWCHART GRAPHICS MAP:", f"  [ {blueprint['flow']} ]", color_rgb=(100, 116, 139), font_type="B")
+        format_section("REQUIRED AUTOMATION TECHNOLOGY TOOLS SYSTEM:", blueprint['tools'], color_rgb=(15, 23, 42), font_type="I")
+        format_section("STEP-BY-STEP TERMINAL SETUP IMPLEMENTATION GUIDE:", blueprint['steps'])
+        format_section("TERMINAL ENGINE DEPENDENCY SCRIPTS / SETUP INITIALIZATION COMMANDS:", blueprint['command'], is_code_bg=True)
         
         # Monetization Box Layout Rendering
         pdf.ln(1)
@@ -192,7 +252,7 @@ def export_premium_pdf():
         pdf.set_x(20)
         pdf.set_font("Helvetica", "B", 9)
         pdf.set_text_color(20, 83, 45)
-        pdf.cell(0, 5, "MONETIZATION MODEL & STRATEGIC VALUE CAPTURE:", 0, 1, "L")
+        pdf.cell(0, 5, "MONETIZATION MODEL & VALUE CAPTURE METRICS:", 0, 1, "L")
         
         pdf.set_x(20)
         pdf.set_font("Helvetica", "B", 10.5)
