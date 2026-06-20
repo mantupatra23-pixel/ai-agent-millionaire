@@ -3,9 +3,9 @@ from fastapi.responses import FileResponse, HTMLResponse
 from fpdf import FPDF
 import os
 
-app = FastAPI(title="The AI Agent Millionaire - Super Premium Edition")
+app = FastAPI(title="The AI Agent Millionaire - Super Premium Volume")
 
-# 📂 PURE 100 COMPLETELY DISTINCT TECHNICAL SUBJECTS DATA MATRIX
+# 📂 PURE 100 COMPLETELY DISTINCT SUBJECTS ENGINE
 FINAL_100_BLUEPRINTS = []
 categories = ["LOCAL BUSINESS AUTOMATION", "HYPER-TRAFFIC MEDIA SYSTEMS", "MICRO-SAAS DEVELOPMENT", "DATA & INFRASTRUCTURE OPERATORS"]
 
@@ -55,55 +55,52 @@ for i in range(100):
     
     if (i % 4) == 0:
         ind = subjects[(i // 4) % len(subjects)]
-        title = f"Autonomous {ind} Framework"
+        title = f"Autonomous {ind} System"
         tools = "Make.com, OpenAI Assistants API, Twilio WhatsApp API, Google Workspace"
-        desc = f"System Schema #{num}: Ek conversational AI agent architecture framework jo local {ind} workflows ko handle karta hai. Yeh processing metadata analytics parameters auto-parse karke database layer update karta hai."
-        flow = "User Chat -> Twilio Webhook -> Make Pipeline -> OpenAI Core -> Ledger Update"
-        steps = "1. Setup cloud channel webhooks for input streaming. 2. Mount knowledge base criteria to vector memory index. 3. Hook output streams securely."
-        command = "mkdir ai-agent-core && cd ai-agent-core\\npip install openai twilio fastapi uvicorn requests\\npython main.py"
-        money = "Monthly Retainer: Charge Rs. 3,000 to Rs. 6,000/month securely from client store."
-        guardrail = "Set Max-Tokens logic to prevent runaway recursion loops in OpenAI Assistants calls."
+        desc = f"System Runbook Topic #{num}: Architectural framework execution modules for automated {ind} processing workflows. Handles secure transactional hooks autonomously."
+        flow = "User Sync -> Incoming Webhook Node -> OpenAI Inference Kernel -> Ledger Database"
+        steps = "1. Deploy cloud infrastructure parameters mappings. 2. Mount source training logs context variables. 3. Monitor webhook execution loops."
+        command = "mkdir agent-core && cd ai-agent-core\\npip install openai twilio fastapi uvicorn requests"
+        money = "Monthly Platform Subscription Retainer: Invoice target storefronts Rs. 3,000 to Rs. 6,000/month."
         diff, cap = "Medium", "Tools Only"
     elif (i % 4) == 1:
         ind = media_subjects[(i // 4) % len(media_subjects)]
-        title = f"Automated {ind} Matrix"
-        tools = "Python Scrapy, Gemini Pro API, ElevenLabs Voice, Platform REST APIs"
-        desc = f"System Schema #{num}: High-fidelity dynamic content rendering engine jo automated {ind} media operations deploy karta hai without human processing layers."
-        flow = "Scraper Daemon -> Tokenizer Layer -> LLM Content Variant Gen -> REST API Dispatch"
-        steps = "1. Launch celery worker loops on cloud servers. 2. Implement target media transformation structures. 3. Monitor analytics index parameters."
-        command = "pip install requests beautifulsoup4 soundfile analytics-sdk\\nscrapy crawl media_pipeline"
-        money = "Traffic Revenue Arbitrage: Capitalize programmatic traffic payouts directly via dashboard metrics."
-        guardrail = "Use concurrent request limits and proxy rotation to avoid temporary IP blocks from source sites."
+        title = f"Automated {ind} Traffic Factory"
+        tools = "Python Scrapy, Gemini Pro API, ElevenLabs Audio, Social Media REST APIs"
+        desc = f"System Runbook Topic #{num}: Machine-driven content scaling loop engineered to render and distribute premium {ind} dynamic assets without manual inputs."
+        flow = "Source Scraper Engine -> Parser Unit -> LLM Context Compilation -> Automated REST Dispatch"
+        steps = "1. Setup asynchronous processing workers layers. 2. Establish baseline conversion variables schemas. 3. Stream platform pushes."
+        command = "pip install scrapy requests beautifulsoup4 soundfile\\npython production_worker.py"
+        money = "Ad-Network Arbitrage: Secure automatic high-playback programmatic payouts sequentially."
         diff, cap = "Low", "Zero Capital"
     elif (i % 4) == 2:
         ind = saas_subjects[(i // 4) % len(saas_subjects)]
-        title = f"Premium {ind} Micro-SaaS Portal"
-        tools = "Next.js, Tailwind CSS, FastAPI Backend, Supabase Engine, Stripe Gateway"
-        desc = f"System Schema #{num}: Single-utility user portal framework engineered around {ind} optimization blocks. Features embedded dynamic credit balance management ledger tools."
-        flow = "Client Form Upload -> FastAPI API Endpoint -> AI Asset Compiler Layer -> Stripe Hook Return"
-        steps = "1. Configure React frontend forms layout blueprints. 2. Mount authorization keys to target endpoints variables. 3. Route response files."
-        command = "npm install @stripe/stripe-js pdf-parse openai dotenv\\nnpm run dev"
-        money = "Pay-Per-Generation: Invoice users Rs. 49 to Rs. 149 per transaction directly via token stripe integration."
-        guardrail = "Implement absolute request timeouts on FastAPI router nodes to safeguard background database execution pools."
+        title = f"Premium {ind} Utility SaaS"
+        tools = "Next.js, Tailwind CSS, FastAPI Backend, Supabase Core, Stripe API Hooks"
+        desc = f"System Runbook Topic #{num}: High-converting user interface portal mapped explicitly for programmatic {ind} adjustments with credits paywall limits blocks."
+        flow = "Client Document Upload -> FastAPI Route Handler -> Token Optimization Array -> Stripe Return"
+        steps = "1. Render minimalist interface structures canvas layouts. 2. Link payment gateway confirmation tokens. 3. Output files."
+        command = "npm install @stripe/stripe-js pdf-parse openai dotenv\\nnpm run production-build"
+        money = "Pay-Per-Use Transactional Tokens: Charge consumers Rs. 49 to Rs. 149 per compile cycle instantly."
         diff, cap = "High", "Minimal SaaS Fee"
     else:
         ind = infra_subjects[(i // 4) % len(infra_subjects)]
-        title = f"Enterprise {ind} Guardian Daemon"
-        tools = "Python Scrapy, PostgreSQL Server, Redis Cache, Resend Mail API, AWS EC2"
-        desc = f"System Schema #{num}: Persistent cloud daemon application engineered to monitor technical performance parameters for {ind} anomalies autonomously."
-        flow = "Cron Thread Trigger -> Active Scanner Node -> Redis Memory Cache Filter -> Resend Mailer Out"
-        steps = "1. Deploy background daemon processes loops. 2. Hook tracking parameters schemas to relational DB structures. 3. Run alert webhooks."
-        command = "pip install scrapy supabase resend redis psycopg2-binary\\npython daemon_worker.py"
-        money = "B2B Infrastructure Retainer: Bill software systems clients Rs. 5,000 to Rs. 12,000/month seamlessly."
-        guardrail = "Set standard database connection pool pooling thresholds to minimize heavy operational overhead loops."
+        title = f"Enterprise {ind} Operations Monitor"
+        tools = "Python Scrapy Core, PostgreSQL Relational DB, Redis Cache, Resend Mail API"
+        desc = f"System Runbook Topic #{num}: Non-intrusive background cloud micro-daemon application built to inspect architecture components logs for {ind} irregularities."
+        flow = "Scheduler Daemon -> Query Scan Sequence -> Memory Cache Check -> Resend Webhook Transmission"
+        steps = "1. Initialize target monitoring script patterns sequences. 2. Map data parameters to SQL storage schemas. 3. Launch alert pipelines."
+        command = "pip install scrapy supabase resend redis psycopg2-binary\\npython micro_daemon.py"
+        money = "B2B Technical Retention Contract: Charge modern tech founders and platforms Rs. 5,000 to Rs. 12,000/month."
         diff, cap = "High", "Server Cost Only"
 
     FINAL_100_BLUEPRINTS.append({
         "number": num, "category": cat, "title": title, "tools": tools,
         "desc": desc, "flow": flow, "steps": steps, "command": command, "money": money,
-        "difficulty": diff, "capital": cap, "guardrail": guardrail
+        "difficulty": diff, "capital": cap
     })
 
+# Supplementary data schemas
 TOOL_DIRECTORY = [
     {"name": "FastAPI Framework", "use": "High-speed Python APIs creation", "url": "https://fastapi.tiangolo.com"},
     {"name": "Make Automation", "use": "Visual backend logic & webhooks flow", "url": "https://www.make.com"},
@@ -113,25 +110,22 @@ TOOL_DIRECTORY = [
     {"name": "Resend Infrastructure", "use": "B2B Email marketing delivery node", "url": "https://resend.com"}
 ]
 
-# Custom Context-Aware FPDF Subclass for Super-Premium Books
 class SuperPremiumEbook(FPDF):
     def __init__(self):
         super().__init__()
-        self.current_section_tag = "PRODUCTION ENGINE REFERENCE"
+        self.current_section_tag = "AUTONOMOUS CORE REFERENCE"
 
     def set_section_tag(self, tag):
         self.current_section_tag = tag
 
     def header(self):
-        # Dynamically hides header tracking bar on Cover, Intro, and Index Directory
         if self.page_no() > 5:
             self.set_font("Helvetica", "B", 8)
             self.set_text_color(100, 116, 139)
-            # Left Header context updates in real-time depending on book progress
-            self.cell(120, 10, f"THE AI AGENT MILLIONAIRE  |  SECTION: {self.current_section_tag}", 0, 0, "L")
+            self.cell(120, 10, f"THE AI AGENT MILLIONAIRE  |  MODULE: {self.current_section_tag}", 0, 0, "L")
             self.set_font("Helvetica", "B", 7.5)
             self.set_text_color(37, 99, 235)
-            self.cell(0, 10, "2026 PRODUCTION RUNBOOK STANDARD", 0, 0, "R")
+            self.cell(0, 10, "2026 DEPLOYMENT MANUAL CODES STANDARD", 0, 0, "R")
             self.set_draw_color(226, 232, 240)
             self.line(15, 22, 200, 22)
             self.ln(12)
@@ -141,9 +135,9 @@ class SuperPremiumEbook(FPDF):
             self.set_y(-15)
             self.set_font("Helvetica", "B", 7.5)
             self.set_text_color(148, 163, 184)
-            self.cell(100, 10, "[ RUNBOOK KEY STATUS: GOLD VERIFIED PRODUCTION STANDARDS ]", 0, 0, "L")
+            self.cell(110, 10, "[ RUNBOOK AUTHENTICATION ACCESS STATUS: VERIFIED SEED MODEL ]", 0, 0, "L")
             self.set_font("Helvetica", "I", 8)
-            self.cell(0, 10, f"System Page Reference: {self.page_no()}", 0, 0, "R")
+            self.cell(0, 10, f"System Page Reference Index: {self.page_no()}", 0, 0, "R")
 
 @app.get("/", response_class=HTMLResponse)
 def home():
@@ -158,9 +152,9 @@ def home():
         <div class="max-w-md p-10 bg-slate-900 border border-slate-800 rounded-3xl text-center shadow-2xl relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl"></div>
             <h1 class="text-3xl font-black mb-4">The AI Agent Millionaire</h1>
-            <p class="text-slate-400 text-sm mb-8 leading-relaxed">Super-Premium Full Scale Edition. Featuring context-aware dynamic page headers, clean tabular appendices, and multi-line code execution systems.</p>
-            <a href="/generate-pdf" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-6 rounded-2xl transition duration-200 shadow-xl shadow-blue-600/20">
-                Download Super Premium Book ↓
+            <p class="text-slate-400 text-sm mb-8 leading-relaxed">Full Scale 100 Topics Complete Edition. Optimized code visualization panels and vector structural alignment blocks.</p>
+            <a href="/generate-pdf" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-6 rounded-2xl transition duration-200">
+                Download Full 100 Subject Book ↓
             </a>
         </div>
     </body>
@@ -173,7 +167,7 @@ def export_premium_pdf():
     pdf = SuperPremiumEbook()
     pdf.set_auto_page_break(auto=True, margin=20)
     
-    # 📘 1. MAIN FRONT COVER PAGE
+    # 📘 PAGE 1: DYNAMIC SOLID DARK COVER
     pdf.add_page()
     pdf.set_fill_color(15, 23, 42)
     pdf.rect(0, 0, 215, 280, "F")
@@ -189,18 +183,18 @@ def export_premium_pdf():
     pdf.ln(5)
     pdf.set_font("Helvetica", "B", 9)
     pdf.set_text_color(59, 130, 246)
-    pdf.cell(0, 10, "100 INTERACTIVE BLUEPRINTS WITH MULTI-LINE RUNBOOKS & CODE TERMINALS", 0, 1, "C")
+    pdf.cell(0, 10, "100 INTERACTIVE SUBJECT BLUEPRINTS FEATURING CODE CHANNELS RUNBOOKS", 0, 1, "C")
     
     pdf.set_y(240)
     pdf.set_font("Helvetica", "B", 9)
     pdf.set_text_color(100, 116, 139)
     pdf.cell(0, 10, "2026 ULTIMATE PRODUCTION WORKFLOW  |  BY MANTU PATRA", 0, 1, "C")
 
-    # 📘 2. EXPANDED PRE-TEXT INTRODUCTION CHAPTER
+    # 📘 PAGE 2: FULL COMPREHENSIVE TEXT INTRODUCTION
     pdf.add_page()
     pdf.set_font("Helvetica", "B", 18)
     pdf.set_text_color(15, 23, 42)
-    pdf.cell(0, 10, "INTRODUCTION: THE ARCHITECTURE OF AUTONOMY", 0, 1, "L")
+    pdf.cell(0, 10, "INTRODUCTION: THE PRINCIPLES OF AUTONOMY", 0, 1, "L")
     pdf.set_fill_color(37, 99, 235)
     pdf.rect(15, pdf.get_y() + 2, 40, 2, "F")
     pdf.ln(12)
@@ -215,27 +209,23 @@ def export_premium_pdf():
         pdf.multi_cell(0, 6, content, 0, "J")
         pdf.ln(4)
 
-    add_intro_block("A. THE CORE PHILOSOPHY", 
-                    "AI ke is advanced daur me sabse badi galti hai wahi purane template systems banana jo "
-                    "poori market copy kar rahi hai. Is book ka purpose aapko fully autonomous workflows aur "
-                    "background network micro-daemons build karna sikhana hai jo production cloud clusters par "
-                    "bina kisi human click ke 24/7 self-running machine ki tarah operate karein.")
+    add_intro_block("A. THE STRATEGIC OVERVIEW", 
+                    "AI systems automation ke is daur me sabse badi tactical flaw hai simple wrappers "
+                    "bana kar chor dena. Is premium manual guide ka complete objectives aapko backend systems aur "
+                    "continuous micro-daemons pipelines deploy karna sikhana hai jo production parameters par "
+                    "bina kisi human touch ke 24/7 autonomous machines ki tarah compute karein.")
     
-    add_intro_block("B. SYSTEM REQUIREMENTS MATRIX", 
-                    "Sabhie 100 systems ko test aur deploy karne ke liye aapko heavy computers nahi chahiye. "
-                    "Aap apne mobile me Termux Linux terminal client setup karke, standard Python environment binaries, "
-                    "aur cloud webhook routers (jaise Make or Resend API keys) ka use karke in pipelines ko locally initializes kar sakte hain.")
+    add_intro_block("B. SYSTEM PREREQUISITES MAPPING", 
+                    "Sabhie 100 technical concepts ko deploy karne ke liye heavy equipment configuration data "
+                    "ki zaroorat nahi hai. Aap apne mobile standard terminal app (Termux Client) ka use karke, "
+                    "isolated python runtimes, safe proxy layers rotation, aur cloud webhooks platforms integration "
+                    "ke zariye high-performance nodes create kar sakte hain seamlessly.")
 
-    add_intro_block("C. THE RUNBOOK BLUEPRINT METHODOLOGY", 
-                    "Har ek single blueprint sheet ko humne strictly functional layers me standardise kiya hai: "
-                    "System Logic description, data flowchart mapping brackets, tech dependency criteria tools stack, "
-                    "step-by-step shell execution guides, operational safety limit warnings, aur ultimate value pricing modules.")
-
-    # 📘 3. CLICKABLE INDEX DIRECTORY
+    # 📘 PAGE 3-5: INTERACTIVE LINKS INDEX DIRECTORY
     pdf.add_page()
     pdf.set_font("Helvetica", "B", 18)
     pdf.set_text_color(15, 23, 42)
-    pdf.cell(0, 10, "SYSTEM INDEX & DIRECTORY", 0, 1, "L")
+    pdf.cell(0, 10, "SYSTEM INDEX & COMPLETE SUBJECTS DIRECTORY", 0, 1, "L")
     
     pdf.set_fill_color(37, 99, 235)
     pdf.rect(15, pdf.get_y() + 2, 30, 2, "F")
@@ -261,12 +251,11 @@ def export_premium_pdf():
         pdf.cell(0, 7, short_title, 0, 1, "L", link=links_map[blueprint['number']])
         index_count += 1
 
-    # 📘 4. INDIVIDUAL TOPICS RUNBOOKS GENERATION WITH CONTEXT ACCESS
+    # 📘 INDIVIDUAL EXPLICIT DEEP TOPIC BLUEPRINTS RUNBOOKS
     last_cat = None
     for blueprint in FINAL_100_BLUEPRINTS:
         if blueprint['category'] != last_cat:
             last_cat = blueprint['category']
-            # Updating our header tracking mechanism instantly before loading section page
             pdf.set_section_tag(last_cat)
             
             pdf.add_page()
@@ -276,9 +265,10 @@ def export_premium_pdf():
             pdf.set_font("Helvetica", "B", 20)
             pdf.set_text_color(255, 255, 255)
             pdf.cell(0, 10, last_cat, 0, 1, "C")
+            pdf.ln(4)
             pdf.set_font("Helvetica", "B", 10)
             pdf.set_text_color(59, 130, 246)
-            pdf.cell(0, 10, "PRODUCTION RUNBOOKS INBOUND MAPPING", 0, 1, "C")
+            pdf.cell(0, 10, "PRODUCTION RUNBOOKS INBOUND DEPLOYMENT MATRIX", 0, 1, "C")
             
         pdf.add_page()
         pdf.set_link(links_map[blueprint['number']], y=0)
@@ -294,23 +284,23 @@ def export_premium_pdf():
         pdf.set_x(140)
         pdf.set_font("Helvetica", "B", 8)
         pdf.set_text_color(15, 23, 42)
-        pdf.cell(0, 6, f"Complexity: {blueprint['difficulty']}  |  Capital: {blueprint['capital']}", 0, 1, "R")
+        pdf.cell(0, 6, f"Tier Metrics: {blueprint['difficulty']}  |  Costing: {blueprint['capital']}", 0, 1, "R")
         
-        # Thick Modern Left Border Accent Block
+        # Solid Accent Indicator Shapes (Graphic Border Blocks Mapping)
         current_y = pdf.get_y()
         pdf.set_fill_color(37, 99, 235)
         pdf.rect(15, current_y + 2, 4, 12, "F")
         
         pdf.set_x(23)
-        pdf.set_font("Helvetica", "B", 16)
+        pdf.set_font("Helvetica", "B", 15)
         pdf.set_text_color(15, 23, 42)
         pdf.multi_cell(0, 10, blueprint['title'], 0, "L")
         pdf.ln(4)
         
-        def format_section(heading, text_data, color_rgb=(51, 65, 85), font_type="", is_code_bg=False, is_warning=False):
+        def format_section(heading, text_data, color_rgb=(51, 65, 85), font_type="", is_code_bg=False):
             pdf.set_x(15)
             pdf.set_font("Helvetica", "B", 10)
-            pdf.set_text_color(225, 29, 72) if is_warning else pdf.set_text_color(37, 99, 235)
+            pdf.set_text_color(37, 99, 235)
             pdf.cell(0, 6, heading, 0, 1, "L")
             pdf.ln(1)
             
@@ -331,17 +321,6 @@ def export_premium_pdf():
                     pdf.cell(0, 6, line, 0, 1, "L")
                 pdf.set_x(15)
                 pdf.ln(5)
-            elif is_warning:
-                w_y = pdf.get_y()
-                pdf.set_fill_color(254, 242, 242)
-                pdf.rect(15, w_y, 180, 12, "F")
-                pdf.set_y(w_y + 3)
-                pdf.set_x(20)
-                pdf.set_font("Helvetica", "I", 10)
-                pdf.set_text_color(153, 27, 27)
-                pdf.cell(0, 6, text_data, 0, 1, "L")
-                pdf.set_x(15)
-                pdf.ln(4)
             else:
                 pdf.set_x(15)
                 pdf.set_font("Helvetica", font_type, 10.5)
@@ -349,14 +328,13 @@ def export_premium_pdf():
                 pdf.multi_cell(0, 6, text_data, 0, "J")
                 pdf.ln(3)
 
-        format_section("1. DETAILED OPERATIONAL SPECIFICATION:", blueprint['desc'])
-        format_section("2. DATA FLOW ARCHITECTURE FLUID MAP:", f"  [ {blueprint['flow']} ]", color_rgb=(100, 116, 139), font_type="B")
-        format_section("3. REQUIRED AUTOMATION TECHNOLOGY TOOLS SYSTEM:", blueprint['tools'], color_rgb=(15, 23, 42), font_type="I")
-        format_section("4. STEP-BY-STEP TERMINAL SETUP IMPLEMENTATION GUIDE:", blueprint['steps'])
-        format_section("5. SYSTEM LIMITS & OPERATIONAL GUARDRAILS:", blueprint['guardrail'], is_warning=True)
-        format_section("6. TERMINAL ENGINE INITIALIZATION COMMANDS (RUNFLOW):", blueprint['command'], is_code_bg=True)
+        format_section("A. EXPERT SUBJECT MATERIAL & SPECIFICATION:", blueprint['desc'])
+        format_section("B. DATA PROCESSING FLUID ARCHITECTURE NETWORK MAP:", f"  [ {blueprint['flow']} ]", color_rgb=(100, 116, 139), font_type="B")
+        format_section("C. MANDATORY AUTOMATION DEPLOYMENT SYSTEM TOOLS:", blueprint['tools'], color_rgb=(15, 23, 42), font_type="I")
+        format_section("D. STEP-BY-STEP TERMINAL RUNBOOK EXECUTION WORKFLOW:", blueprint['steps'])
+        format_section("E. ISOLATED TERMINAL ENGINE DEPENDENCY INITIALIZATION CODES:", blueprint['command'], is_code_bg=True)
         
-        # 💰 Monetization Block Container
+        # Solid Value Monetization Boxes
         pdf.ln(1)
         curr_y = pdf.get_y()
         pdf.set_fill_color(240, 253, 244)
@@ -367,18 +345,18 @@ def export_premium_pdf():
         pdf.set_x(20)
         pdf.set_font("Helvetica", "B", 9)
         pdf.set_text_color(20, 83, 45)
-        pdf.cell(0, 5, "MONETIZATION MODEL & STRATEGIC VALUE CAPTURE:", 0, 1, "L")
+        pdf.cell(0, 5, "MONETIZATION BLUEPRINT & VALUE CAPTURE STRATEGY:", 0, 1, "L")
         
         pdf.set_x(20)
         pdf.set_font("Helvetica", "B", 10.5)
         pdf.set_text_color(22, 101, 52)
         pdf.cell(0, 6, blueprint['money'], 0, 1, "L")
 
-    # 📘 5. APPENDIX: CORE ECOSYSTEM PLATFORMS DIRECTORY
+    # 📘 FINAL CHAPTER: APPENDIX ARCHITECTURE REFERENCE PLATFORMS
     pdf.add_page()
     pdf.set_font("Helvetica", "B", 18)
     pdf.set_text_color(15, 23, 42)
-    pdf.cell(0, 10, "APPENDIX: TECH PLATFORM INTEGRATION LINKS", 0, 1, "L")
+    pdf.cell(0, 10, "APPENDIX: TECH PLATFORM INTEGRATION PORTALS", 0, 1, "L")
     pdf.set_fill_color(37, 99, 235)
     pdf.rect(15, pdf.get_y() + 2, 45, 2, "F")
     pdf.ln(12)
